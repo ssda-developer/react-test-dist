@@ -6,9 +6,9 @@ const Comments = () => {
     const { activeTask } = useTaskContext();
 
     return (
-        <div className="comments">
+        <div className={`comments ${!activeTask ? 'disabled' : ''}`}>
             <div className="comments__content">
-                <h1 className="comments__title">Comments #{activeTask?.id}</h1>
+                <h2 className="comments__title">Comments #{activeTask?.id}</h2>
                 <CommentsList />
                 <CommentsForm />
             </div>
