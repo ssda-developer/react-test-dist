@@ -12,6 +12,7 @@ const TasksForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         addTask({ name: taskText, count: 0, id: generateRandomNineDigitNumber(), comments: [] });
         setTaskText('');
     };
@@ -26,7 +27,7 @@ const TasksForm = () => {
                 value={taskText}
                 onChange={handleInputChange}
             />
-            <button className="tasks-form__button" type="submit">Add New</button>
+            <button className="btn tasks-form__btn" type="submit">Add New</button>
         </form>
     );
 };

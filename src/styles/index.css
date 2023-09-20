@@ -1,0 +1,218 @@
+:root {
+    --primary-bg-color: #2b2f3e;
+    --color-black: #000;
+
+    --accent-color: #17a2b8;
+    --active-color: #00c2e1;
+    --danger-color: #dc3545;
+    --hover-color: #0d606e;
+    --text-color: #5b5d63;
+    --primary-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --secondary-font: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    --color-white: #fff;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+    margin: 0;
+}
+
+code {
+    font-family: var(--secondary-font);
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid var(--color-black);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, color 0.15s ease-in-out;
+    white-space: nowrap;
+}
+
+.app__container {
+    display: flex;
+}
+
+.app-sidebar__wrapper {
+    background-color: var(--primary-bg-color);
+    height: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    padding: 20px 15px;
+    width: 100%;
+}
+
+.app-sidebar__title {
+    color: var(--color-white);
+    font-size: 20px;
+    margin: 0 0 5px;
+}
+
+.app-sidebar__content {
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.app__main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.comments,
+.tasks {
+    margin: 20px;
+}
+
+.comments__content,
+.tasks__content {
+    background: var(--color-white);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+    margin: 10px;
+    max-width: 1000px;
+    min-height: 100px;
+    min-width: 500px;
+    padding: 10px;
+    width: 100%;
+}
+
+.comments__title,
+.tasks__title {
+    color: var(--color-black);
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.comments-form,
+.tasks-form {
+    display: flex;
+    margin: 10px 0;
+}
+
+.comments-form__text-input,
+.tasks-form__input {
+    background-clip: padding-box;
+    background-color: var(--color-white);
+    border: 1px solid var(--text-color);
+    border-radius: 0.25rem;
+    color: var(--text-color);
+    display: block;
+    font-size: 1rem;
+    height: calc(2.25rem + 2px);
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    width: 100%;
+}
+
+.tasks-form__input {
+    margin-right: 10px;
+}
+
+.comments-form__text-input {
+    height: auto;
+    margin: 0 10px;
+}
+
+.comments-form__color-input {
+    background-clip: padding-box;
+    background-color: var(--color-white);
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    display: block;
+    font-size: 1rem;
+    height: 60px;
+    line-height: 1.5;
+    min-width: 60px;
+    padding: 2px 3px;
+}
+
+.comments-list__item,
+.tasks-list__item {
+    margin: 10px 0;
+}
+
+.comments-item,
+.tasks-item {
+    align-items: center;
+    background-color: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, .125);
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0.75rem 1.25rem;
+    position: relative;
+}
+
+.tasks-item.is-active {
+    border-left: 5px solid var(--active-color);
+}
+
+.tasks-item__name {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.tasks-item__comment-count {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    color: var(--color-white);
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 10px;
+    padding: 0.25em 0.4em;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.comments-item__color {
+    height: 20px;
+    margin-right: 10px;
+    width: 20px;
+}
+
+.tasks-item__delete-btn {
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+    padding: 0.375rem 0.75rem;
+}
+
+.tasks-item__delete-btn:hover,
+.tasks-item__delete-btn:focus {
+    background: var(--danger-color);
+    color: var(--color-white);
+}
+
+.comments-form__btn,
+.tasks-form__btn {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--color-white);
+}
+
+.comments-form__btn:hover,
+.comments-form__btn:focus,
+.tasks-form__btn:hover,
+.tasks-form__btn:focus {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+.disabled {
+    opacity: 0.35;
+    pointer-events: none;
+    user-select: none;
+}

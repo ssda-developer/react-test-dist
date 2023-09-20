@@ -41,7 +41,7 @@ const CommentsForm = () => {
                 value={commentText}
                 onChange={handleInputChange}
             />
-            <button className="comments-form__submit-btn" type="submit">Add New</button>
+            <button className="btn comments-form__btn" type="submit">Add New</button>
         </form>
     );
 };
